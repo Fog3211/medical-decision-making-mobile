@@ -1,9 +1,9 @@
 import axios from './axios'
 import remConfig from './remConfig'
-import formCheck from './formCheck'
+import encryption from './encryption'
 
 export {
     axios,
     remConfig,
-    formCheck
+    encryption
 }

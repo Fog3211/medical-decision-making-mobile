@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <transition :name="transitionName">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <router-view />
     </transition>
   </div>
 </template>
@@ -17,15 +15,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      let no_transition = [
-        'register',
-        'login',
-        'recommend',
-        'hottest',
-        'latest',
-        'mine',
-        'collection',
-      ];
+      let no_transition = ['register', 'login'];
       if (no_transition.includes(to.name) && no_transition.includes(from.name)) {
         this.transitionName = '';
         return;
@@ -50,7 +40,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 .slide-right-enter-active,

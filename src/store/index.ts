@@ -6,22 +6,25 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     userInfo: {
-      is_login: false,
+      isLogin: false,
       username: "",
+      token: ""
     }
   },
   mutations: {
     loginSuccess(state, params) {
       state.userInfo = {
-        is_login: true,
-        username: params.username
+        isLogin: true,
+        username: params.username,
+        token: params.token
       }
       sessionStorage.setItem("userInfo", JSON.stringify(state.userInfo))
     },
     logout(state) {
       state.userInfo = {
-        is_login: false,
-        username: null
+        isLogin: false,
+        username: "",
+        token: ""
       }
       sessionStorage.setItem("userInfo", JSON.stringify(state.userInfo))
     },

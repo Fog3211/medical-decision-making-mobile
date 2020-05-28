@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Header title="首页" />
+    <Header title="消息通知" />
     <!-- 搜索部分 -->
     <router-link to="/search" class="search">
       <div class="search-input">
@@ -42,7 +42,7 @@ export default {
     Footer,
     CartoonDetail,
   },
-  name: 'home',
+  name: 'news',
   data() {
     return {
       cartoonList: [],
@@ -92,10 +92,10 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #bbb;
+      color: #b7b7b7;
       width: 95vw;
       height: 0.75rem;
-      background-color: rgb(242, 249, 255);
+      background-color: aliceblue;
       border-radius: 0.3rem;
     }
 

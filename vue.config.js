@@ -15,5 +15,22 @@ module.exports = {
       .set('@store', resolve('src/store'))
   },
   productionSourceMap: false,
-  publicPath: process.env.NODE_ENV === 'production' ? './' : './'
+  publicPath: process.env.NODE_ENV === 'production' ? './' : './',
+  devServer: {
+    'proxy': {
+      '/api': {
+        target: 'http://localhost:7001',
+        pathRewrite: {
+          '^/api': '/api',
+        },
+        secure: false,
+        changeOrigin: true,
+      },
+    },
+    'headers': {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': '*',
+    },
+  },
 }
